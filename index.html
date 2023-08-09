@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>RepeatIt Game</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="repeatit">RepeatIt!</header>
+      <div class="line">- - - - - - - - - - - - - -</div>
+      <div class="right-side toleft">
+        <div class="h2 actualScore">Actual Score: 0</div>
+        <button id="start" class="playAgain-btn">Start Game</button>
+      </div>
+
+      <div id="game-container" class="cells">
+        <div class="btn red number" style="--i: 1">red</div>
+        <div class="btn orange number" style="--i: 2">orange</div>
+        <div class="btn yellow number" style="--i: 3">yellow</div>
+        <div class="btn green number" style="--i: 4">green</div>
+        <div class="btn turquoise number" style="--i: 5">turquoise</div>
+        <div class="btn blue number" style="--i: 6">blue</div>
+        <div class="btn purple number" style="--i: 7">purple</div>
+        <div class="btn pink number" style="--i: 8">pink</div>
+      </div>
+      <div class="right-side">
+        <div class="h2 highScore">High Score: 0</div>
+        <button class="playAgain-btn">Play Again</button>
+      </div>
+      <div class="write h2 hidden"></div>
+      <div class="input h2 hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

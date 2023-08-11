@@ -62,12 +62,14 @@ header {
   align-self: start;
 }
 
-.actualScore {
+.currentScore {
   grid-row: 3;
+  text-align: center;
 }
 
 .highScore {
   grid-row: 3;
+  text-align: center;
 }
 
 .playAgain-btn {
@@ -175,4 +177,10 @@ header {
   position: absolute;
   top: 21%;
   font-size: 4rem;
+}
+
+.scores {
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 6rem;
 }

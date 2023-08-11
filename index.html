@@ -18,7 +18,10 @@
       <header class="repeatit">RepeatIt!</header>
       <div class="line">- - - - - - - - - - - - - -</div>
       <div class="right-side toleft">
-        <div class="h2 actualScore">Actual Score: 0</div>
+        <div class="h2 currentScore">
+          Current Score:
+          <p class="scores" id="currentScore">0</p>
+        </div>
         <button id="start" class="playAgain-btn">Start Game</button>
       </div>
 
@@ -33,8 +36,11 @@
         <div class="btn pink number" style="--i: 8">pink</div>
       </div>
       <div class="right-side">
-        <div class="h2 highScore">High Score: 0</div>
-        <button class="playAgain-btn">Play Again</button>
+        <div class="h2 highScore">
+          High Score:
+          <p class="scores" id="highScore">0</p>
+        </div>
+        <button class="playAgain-btn" id="playAgain">Play Again</button>
       </div>
       <div class="write h2 hidden"></div>
       <div class="input h2 hidden"></div>

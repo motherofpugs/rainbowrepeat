@@ -11,6 +11,7 @@ const pink = document.querySelector(".pink");
 const output = document.querySelector(".write");
 const input = document.querySelector(".input");
 const start = document.getElementById("start");
+const playAgain = document.getElementById("playAgain");
 const colorButtons = document.querySelectorAll(".btn");
 const colors = [
   "red",
@@ -23,12 +24,27 @@ const colors = [
   "pink",
 ];
 
-const actualScore = document.querySelector(".actualScore");
-const highScore = document.querySelector(".highScore");
+const current = document.getElementById("currentScore");
+const high = document.getElementById("highScore");
+let currentScore = 0;
+let highScore = 0;
+let playerInput = [];
 
-//GET RANDOM STRING
+const init = function () {
+  highScore = 0;
+  currentScore = 0;
+
+  high.textContent = highScore;
+  current.textContent = currentScore;
+};
+
+playAgain.addEventListener("click", () => {
+  init();
+});
 
 start.addEventListener("click", () => {
+  playerInput = [];
+  input.textContent = playerInput;
   randomColors(colors);
   setTimeout(() => {
     output.classList.add("hidden");
@@ -48,9 +64,8 @@ function randomColors(colors) {
   output.textContent = outputString;
   output.classList.remove("hidden");
   console.log(output.textContent);
+  input.style.color = "";
 }
-
-let playerInput = [];
 
 document.getElementById("game-container").addEventListener("click", (event) => {
   if (event.target.classList.contains("btn") && playerInput.length <= 3) {
@@ -60,23 +75,42 @@ document.getElementById("game-container").addEventListener("click", (event) => {
     console.log(playerInput);
     console.log(input.textContent);
     isTrue();
+    if (playerInput.length == 4) {
+      let correct = isTrue();
 
-    let correct = isTrue();
-
-    if (correct) {
-      input.style.color = rgb(125, 236, 125);
-    } else {
-      input.style.color = "";
+      if (correct) {
+        input.style.color = "rgb(125, 236, 125)";
+        currentScore += 1;
+        current.textContent = currentScore;
+        setTimeout(() => {
+          input.classList.add("hidden");
+          playerInput = [];
+          input.textContent = "";
+        }, 2000);
+        setTimeout(() => {
+          randomColors(colors);
+        }, 3000);
+        setTimeout(() => {
+          output.classList.add("hidden");
+        }, 5600);
+      } else {
+        input.style.color = "rgb(223, 79, 79)";
+        if (highScore < currentScore) {
+          highScore = currentScore;
+        }
+        high.textContent = highScore;
+        currentScore = 0;
+        current.textContent = currentScore;
+      }
     }
   }
 });
 
 function isTrue() {
-  for (let i = 0; i < output.length; i++) {
-    if (input.textContent[i] == output.textContent[i]) {
-      return true;
-    } else {
+  for (let i = 0; i < output.textContent.length; i++) {
+    if (input.textContent[i] !== output.textContent[i]) {
       return false;
     }
   }
+  return true;
 }

@@ -33,7 +33,9 @@ let playerInput = [];
 const init = function () {
   highScore = 0;
   currentScore = 0;
+  playerInput = [];
 
+  input.textContent = playerInput;
   high.textContent = highScore;
   current.textContent = currentScore;
 };

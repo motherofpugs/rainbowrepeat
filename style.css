@@ -23,7 +23,7 @@ html {
 
 body {
   height: 100vh;
-  background-image: linear-gradient(to right, #fba1b7, #ffdde1);
+  background-image: linear-gradient(to right, #d9a7c7, #fffcdc);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,10 +168,6 @@ header {
   font-size: 4rem;
 }
 
-.toleft {
-  grid-column: ;
-}
-
 .input {
   opacity: hidden;
   position: absolute;
@@ -183,4 +179,9 @@ header {
   margin-top: 5rem;
   text-align: center;
   font-size: 6rem;
+}
+
+#game-container {
+  border: 0.6rem solid #d9d7f1;
+  box-shadow: 0rem 0rem 1.4rem 0.2rem rgba(0, 0, 0, 0.123);
 }
